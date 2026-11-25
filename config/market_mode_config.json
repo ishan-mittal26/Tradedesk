@@ -1,0 +1,38 @@
+{
+  "timeframes": {
+    "adx_timeframe": "1h",
+    "bb_timeframe": "15m",
+    "day_range_timeframe": "1d",
+    "atr_reference_timeframe": "1d"
+  },
+  "trending": {
+    "adx_min": 25,
+    "day_range_atr_ratio_min": 0.80,
+    "supertrend_must_align": true
+  },
+  "moderate_range": {
+    "adx_min": 15,
+    "adx_max": 25,
+    "day_range_atr_ratio_min": 0.50,
+    "day_range_atr_ratio_max": 0.80
+  },
+  "tight_range": {
+    "adx_max": 15,
+    "bb_width_percentile_max": 20,
+    "bb_width_rolling_window": 100
+  },
+  "hysteresis": {
+    "candles_required": 3,
+    "description": "3 consecutive candles must satisfy new mode before switching"
+  },
+  "early_session": {
+    "skip_range_before": "09:45",
+    "default_mode_before_skip": "MODERATE_RANGE",
+    "description": "Before 9:45 insufficient candles for reliable ADX — use default"
+  },
+  "position_size_by_mode": {
+    "TRENDING": 1.00,
+    "MODERATE_RANGE": 0.75,
+    "TIGHT_RANGE": 0.00
+  }
+}

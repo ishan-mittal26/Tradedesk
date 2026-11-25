@@ -1,0 +1,134 @@
+{
+  "_note": "NSE/BSE market holidays for 2026. Verify against official NSE circular before each year begins. Lunar-calendar dates (Holi, Eid, Diwali etc.) are estimates — update when NSE publishes the official list.",
+
+  "2026": [
+    {
+      "date": "2026-01-26",
+      "day": "Monday",
+      "name": "Republic Day",
+      "type": "national",
+      "confirmed": true
+    },
+    {
+      "date": "2026-02-17",
+      "day": "Tuesday",
+      "name": "Mahashivratri",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-03-04",
+      "day": "Wednesday",
+      "name": "Holi",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-04-03",
+      "day": "Friday",
+      "name": "Good Friday",
+      "type": "religious",
+      "confirmed": true
+    },
+    {
+      "date": "2026-04-06",
+      "day": "Monday",
+      "name": "Ram Navami",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-04-14",
+      "day": "Tuesday",
+      "name": "Dr. B.R. Ambedkar Jayanti",
+      "type": "national",
+      "confirmed": true
+    },
+    {
+      "date": "2026-05-01",
+      "day": "Friday",
+      "name": "Maharashtra Day",
+      "type": "regional",
+      "confirmed": true
+    },
+    {
+      "date": "2026-06-19",
+      "day": "Friday",
+      "name": "Eid ul-Adha (Bakri Eid)",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "name": "Muharram",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-09-02",
+      "day": "Wednesday",
+      "name": "Ganesh Chaturthi",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-10-02",
+      "day": "Friday",
+      "name": "Mahatma Gandhi Jayanti",
+      "type": "national",
+      "confirmed": true
+    },
+    {
+      "date": "2026-10-21",
+      "day": "Wednesday",
+      "name": "Dussehra (Vijayadashami)",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-11-09",
+      "day": "Monday",
+      "name": "Diwali — Laxmi Puja",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-11-10",
+      "day": "Tuesday",
+      "name": "Diwali — Balipratipada",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-11-24",
+      "day": "Tuesday",
+      "name": "Guru Nanak Jayanti",
+      "type": "religious",
+      "confirmed": false
+    },
+    {
+      "date": "2026-12-25",
+      "day": "Friday",
+      "name": "Christmas Day",
+      "type": "national",
+      "confirmed": true
+    }
+  ],
+
+  "special_trading_sessions": {
+    "_note": "NSE sometimes holds a special Muhurat trading session on Diwali evening (1 hour). Not a full trading day.",
+    "2026-11-09": {
+      "type": "muhurat",
+      "description": "Diwali Muhurat Trading — special 1-hour evening session if announced by NSE"
+    }
+  },
+
+  "metadata": {
+    "source": "NSE official holiday list (verify annually at nseindia.com)",
+    "last_verified": "2026-04-20",
+    "next_update_due": "2026-12-01",
+    "confirmed_count": 7,
+    "estimated_count": 9
+  }
+}

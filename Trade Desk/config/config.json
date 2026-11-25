@@ -1,0 +1,258 @@
+{
+  "capital": {
+    "total": 100000,
+    "currency": "INR",
+    "paper_trading": true,
+    "paper_trading_gate_weeks": 8,
+    "paper_trading_gate_trades": 100
+  },
+
+  "market": {
+    "open_time": "09:15",
+    "close_time": "15:30",
+    "monitor_cutoff_time": "15:10",
+    "morning_briefing_time": "08:45",
+    "daily_report_time": "15:35",
+    "weekly_report_day": "Sunday",
+    "weekly_report_time": "09:00",
+    "timezone": "Asia/Kolkata",
+    "exchange_nse": "NSE",
+    "exchange_bse": "BSE"
+  },
+
+  "instruments": {
+    "active": ["NIFTY", "BANKNIFTY", "FINNIFTY", "SENSEX"],
+    "primary_exchange": {
+      "NIFTY": "NSE_INDEX",
+      "BANKNIFTY": "NSE_INDEX",
+      "FINNIFTY": "NSE_INDEX",
+      "SENSEX": "BSE_INDEX"
+    }
+  },
+
+  "risk": {
+    "max_open_positions": 3,
+    "daily_loss_limit_pct": 10.0,
+    "min_risk_reward": 1.5,
+    "vix_high_size_reduction_pct": 50,
+    "vix_high_threshold": 20,
+    "min_dte_to_buy": 3,
+    "no_new_trades_after_time": "12:30",
+    "expiry_week_dte": 5,
+    "kill_criterion_win_rate_pct": 48,
+    "kill_criterion_months": 3
+  },
+
+  "monitor": {
+    "base_candle_timeframe_minutes": 5,
+    "alert_cooldown_minutes": 30,
+    "score_max": 22,
+
+    "thresholds": {
+      "vix_low": {
+        "vix_max": 13,
+        "soft": 10,
+        "strong": 14,
+        "max": 18
+      },
+      "vix_normal": {
+        "vix_min": 13,
+        "vix_max": 18,
+        "soft": 12,
+        "strong": 16,
+        "max": 18
+      },
+      "vix_high": {
+        "vix_min": 18,
+        "soft": 16,
+        "strong": 20,
+        "max": 22
+      },
+      "fallback": {
+        "soft": 12,
+        "strong": 16,
+        "max": 18
+      }
+    },
+
+    "alert_levels": {
+      "silence": {"min": 0, "max": 9, "label": "SILENCE", "beeps": 0},
+      "soft":    {"min": 10, "max": 13, "label": "SOFT",    "beeps": 1, "color": "yellow"},
+      "strong":  {"min": 14, "max": 17, "label": "STRONG",  "beeps": 2, "color": "orange"},
+      "max":     {"min": 18, "max": 22, "label": "MAX",     "beeps": 3, "color": "red"}
+    },
+
+    "vix_refresh_interval_seconds": 300
+  },
+
+  "scoring": {
+    "sr_breakout_points": 3,
+    "volume_surge_points": 3,
+    "supertrend_flip_points": 3,
+    "candlestick_pattern_points": 2,
+    "oi_shift_points": 2,
+    "rsi_cross_points": 2,
+    "macd_cross_points": 2,
+    "ema20_above_ema50_points": 1,
+    "price_vs_vwap_points": 1,
+    "adx_strong_points": 1,
+    "ema50_above_ema200_points": 1,
+    "volume_surge_multiplier": 2.0,
+    "adx_strong_threshold": 25,
+    "oi_shift_candles": 3,
+    "sr_breakout_min_pct": 0.2
+  },
+
+  "market_mode": {
+    "trending": {
+      "adx_min": 25,
+      "day_range_atr_pct_min": 80,
+      "position_size_pct": 100
+    },
+    "moderate_range": {
+      "adx_min": 15,
+      "adx_max": 25,
+      "day_range_atr_pct_min": 50,
+      "day_range_atr_pct_max": 80,
+      "position_size_pct": 75
+    },
+    "tight_range": {
+      "adx_max": 15,
+      "bb_width_percentile_max": 20,
+      "position_size_pct": 0
+    },
+    "hysteresis_candles": 3
+  },
+
+  "confluence": {
+    "weights": {
+      "1d": 4,
+      "1h": 3,
+      "15m": 2,
+      "5m": 1
+    },
+    "position_size_by_score": {
+      "4": 100,
+      "3": 75,
+      "2_daily_1h": 25,
+      "2_other": 0,
+      "1": 0,
+      "0": 0
+    }
+  },
+
+  "strike_selection": {
+    "target_delta_min": 0.40,
+    "target_delta_max": 0.55,
+    "reject_delta_below": 0.25,
+    "reject_delta_above": 0.80,
+    "min_signal_score_to_buy": 14,
+    "alternatives_count": 3,
+    "dte_rules": {
+      "otm_ok_above_dte": 15,
+      "atm_preferred_dte_min": 8,
+      "atm_preferred_dte_max": 15,
+      "atm_or_itm_dte_min": 3,
+      "atm_or_itm_dte_max": 7,
+      "do_not_buy_below_dte": 3
+    },
+    "vix_rules": {
+      "atm_otm_below_vix": 13,
+      "atm_only_vix_min": 13,
+      "atm_only_vix_max": 18,
+      "itm_preferred_above_vix": 18
+    }
+  },
+
+  "gap_handling": {
+    "atr_pct_no_gap": 30,
+    "atr_pct_small_gap_max": 70,
+    "atr_pct_medium_gap_max": 120,
+    "wait_minutes": {
+      "no_gap": 0,
+      "small": 15,
+      "medium": 30,
+      "large": 45
+    },
+    "size_pct": {
+      "no_gap": 100,
+      "small": 100,
+      "medium": 75,
+      "large": 50
+    },
+    "large_gap_min_score": 18,
+    "small_gap_threshold_addition": 2
+  },
+
+  "data_retention": {
+    "candles_years": 3,
+    "options_chain_days": 90,
+    "logs_days": 90
+  },
+
+  "paths": {
+    "db": "data/market_data.db",
+    "trades_json": "logs/trades.json",
+    "daily_reports": "logs/daily_reports",
+    "weekly_reports": "logs/weekly_reports",
+    "app_log": "logs/app.log",
+    "monitor_log": "logs/monitor.log",
+    "holidays": "config/holidays.json",
+    "instruments": "config/instruments.json"
+  },
+
+  "logging": {
+    "level": "INFO",
+    "max_bytes": 5242880,
+    "backup_count": 3
+  },
+
+  "display": {
+    "theme": "darkly",
+    "window_title": "TradeDesk — Option Buying Terminal",
+    "window_min_width": 1280,
+    "window_min_height": 800,
+    "chart_style": "charles",
+    "candle_colors": {
+      "up": "#26a69a",
+      "down": "#ef5350"
+    },
+    "alert_colors": {
+      "soft": "#ffc107",
+      "strong": "#ff9800",
+      "max": "#f44336"
+    },
+    "probability_colors": {
+      "bull": "#26a69a",
+      "bear": "#ef5350",
+      "sideways": "#78909c"
+    }
+  },
+
+  "ai": {
+    "model": "claude-sonnet-4-6",
+    "max_tokens": 1024,
+    "temperature": 0,
+    "agents_parallel": ["agent_indicator", "agent_confluence", "agent_options", "agent_news", "agent_chart", "agent_journal"],
+    "orchestrator": "agent_orchestrator",
+    "prompt_caching": true,
+    "fallback_to_tier1_on_api_down": true
+  },
+
+  "news": {
+    "max_age_hours": 18,
+    "newsapi_calls_per_day": 100
+  },
+
+  "backtest": {
+    "transaction_cost_per_trade": 40,
+    "min_profit_factor": 1.5,
+    "walk_forward_days": 40,
+    "ranking_weights": {
+      "win_rate": 0.4,
+      "expectancy": 0.3,
+      "recency": 0.3
+    },
+    "combination_run_time": "15:45"
+  }
+}

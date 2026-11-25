@@ -1,0 +1,126 @@
+{
+  "cooldown_trigger_level": "MAX",
+  "conditions": {
+    "sr_breakout": {
+      "enabled": true,
+      "points": 3,
+      "timeframe": "1h",
+      "description": "Price closed > 0.2% beyond 1H S&R zone edge",
+      "closed_candle_only": true
+    },
+    "volume_spike": {
+      "enabled": true,
+      "points": 3,
+      "timeframe": "5m",
+      "description": "Closed candle volume > 2x 20-candle average",
+      "closed_candle_only": true,
+      "volume_multiplier": 2.0,
+      "lookback_candles": 20
+    },
+    "supertrend_flip": {
+      "enabled": true,
+      "points": 3,
+      "timeframe_flip": "15m",
+      "timeframe_confirm": "1h",
+      "description": "Supertrend flipped on 15m AND 1H agrees direction",
+      "require_htf_agreement": true,
+      "closed_candle_only": true
+    },
+    "candlestick_pattern": {
+      "enabled": true,
+      "points": 2,
+      "timeframe": "15m",
+      "description": "Hammer, engulfing, morning/evening star on 15m",
+      "closed_candle_only": true
+    },
+    "oi_shift": {
+      "enabled": true,
+      "points": 2,
+      "timeframe": "15m",
+      "description": "OI shift in signal direction — 3 candle rolling aggregate",
+      "rolling_candles": 3,
+      "closed_candle_only": true
+    },
+    "rsi_cross": {
+      "enabled": true,
+      "points": 2,
+      "timeframe": "1h",
+      "description": "RSI crossed above 40 from below (CE) or below 60 from above (PE)",
+      "rsi_ce_threshold": 40,
+      "rsi_pe_threshold": 60,
+      "closed_candle_only": true
+    },
+    "macd_cross": {
+      "enabled": true,
+      "points": 2,
+      "timeframe": "1h",
+      "description": "MACD line crossed signal line — confirmed closed candle only",
+      "closed_candle_only": true
+    },
+    "ema_20_50": {
+      "enabled": true,
+      "points": 1,
+      "timeframe": "1h",
+      "description": "EMA20 above EMA50 (CE) or EMA20 below EMA50 (PE)",
+      "closed_candle_only": true
+    },
+    "price_vwap": {
+      "enabled": true,
+      "points": 1,
+      "timeframe": "5m",
+      "description": "Current price above VWAP (CE) or below VWAP (PE)",
+      "closed_candle_only": false
+    },
+    "adx_strong": {
+      "enabled": true,
+      "points": 1,
+      "timeframe": "1h",
+      "description": "ADX > 25 on 1H",
+      "adx_threshold": 25,
+      "closed_candle_only": true
+    },
+    "ema_50_200": {
+      "enabled": true,
+      "points": 1,
+      "timeframe": "1d",
+      "description": "EMA50 above EMA200 on daily — higher TF bias",
+      "closed_candle_only": true
+    },
+    "bb_squeeze": {
+      "enabled": true,
+      "points": 21,
+      "timeframe": "15m",
+      "description": "BB squeeze breakout — bypasses threshold, fires MAX alert",
+      "squeeze_min_candles": 8,
+      "bypasses_threshold": true,
+      "cooldown_on_max_only": true,
+      "closed_candle_only": true
+    }
+  },
+  "vix_adjusted_thresholds": {
+    "low": {
+      "vix_max": 13.0,
+      "soft": 10,
+      "strong": 14,
+      "max": 18
+    },
+    "normal": {
+      "vix_min": 13.0,
+      "vix_max": 18.0,
+      "soft": 12,
+      "strong": 16,
+      "max": 18
+    },
+    "high": {
+      "vix_min": 18.0,
+      "soft": 16,
+      "strong": 20,
+      "max": 21
+    },
+    "fallback": {
+      "soft": 12,
+      "strong": 16,
+      "max": 18
+    }
+  }
+}

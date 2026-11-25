@@ -1,0 +1,41 @@
+# TradeDesk — verified package versions (BRD v4.0, April 2026)
+# Install: pip install -r requirements.txt  (inside venv with Python 3.13.13)
+
+# Core data
+pandas==3.0.2
+numpy>=1.26.4
+
+# Technical indicators
+pandas-ta==0.4.71b0
+
+# Broker APIs
+upstox-python-sdk==2.21.0
+kiteconnect==5.1.0
+
+# Charting
+mplfinance==0.12.10b0
+
+# UI
+ttkbootstrap==1.20.2
+pyqt6==6.8.1
+pyqtgraph==0.14.0
+qt-material==2.14
+PySide6>=6.11.0
+
+# AI engine
+anthropic>=0.40.0
+smart-money-concepts>=0.0.6
+
+# Options pricing (Phase 2 Black-Scholes)
+scipy>=1.13.0
+
+# Utilities
+python-dotenv>=1.0.1
+pytz>=2024.1
+schedule>=1.2.1
+colorama>=0.4.6
+openpyxl>=3.1.2
+
+# News & data scraping
+beautifulsoup4>=4.12.3
+newsapi-python>=0.2.7

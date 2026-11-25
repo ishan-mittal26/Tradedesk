@@ -1,0 +1,92 @@
+{
+  "behavior_1_opening_fake": {
+    "enabled": true,
+    "reversal_must_cross_vwap": true,
+    "reversal_volume_ratio_min": 1.5,
+    "valid_window_start": "09:45",
+    "valid_window_end": "10:30",
+    "monday_confidence_adj": -15,
+    "doji_body_ratio_skip": 0.20,
+    "spinning_top_body_ratio": 0.40,
+    "spinning_top_confirm_threshold": 4
+  },
+  "behavior_2_institutional_defense": {
+    "enabled": true,
+    "max_pain_distance_pct_min": 0.30,
+    "pcr_resistance_threshold": 0.75,
+    "pcr_support_threshold": 1.40,
+    "heavy_oi_strike_multiple": 3.0,
+    "heavy_oi_proximity_pct": 0.50,
+    "valid_start": "10:00",
+    "valid_end": "14:30",
+    "thursday_nifty_blocked": true,
+    "wednesday_bnf_exit_by": "12:30"
+  },
+  "behavior_3_liquidity_sweep": {
+    "enabled": true,
+    "eqh_eql_tolerance_pct": 0.02,
+    "eqh_eql_lookback_bars": 20,
+    "eqh_eql_min_touches": 2,
+    "sweep_pierce_pct_min": 0.10,
+    "sweep_volume_ratio_min": 2.0,
+    "rejection_candle_required": true,
+    "valid_kill_zones": ["MORNING", "AFTERNOON"],
+    "friday_confidence_adj": -10
+  },
+  "behavior_4_squeeze_breakout": {
+    "enabled": true,
+    "squeeze_min_candles": 8,
+    "bb_width_percentile_threshold": 10,
+    "bb_width_rolling_window": 100,
+    "breakout_atr_multiple_min": 1.5,
+    "breakout_volume_ratio_min": 2.5,
+    "supertrend_flip_required": true,
+    "bypasses_indicator_confirmation": true,
+    "blocked_after_time": "14:50"
+  },
+  "indicator_confirmation": {
+    "score_to_confirm": 3,
+    "score_to_reduce_size": 2,
+    "score_to_skip": 1,
+    "size_reduction_pct": 0.50
+  },
+  "pipeline_scoring": {
+    "behavior_fired_points": 40,
+    "indicator_confirm_5_5": 20,
+    "indicator_confirm_4_5": 16,
+    "indicator_confirm_3_5": 12,
+    "options_supported_points": 15,
+    "options_neutral_points": 8,
+    "regime_correct_points": 15,
+    "kill_zone_optimal_points": 10,
+    "same_direction_bonus": 10,
+    "conflict_penalty": -10,
+    "combo_same_direction_bonus": 5,
+    "combo_opposite_penalty": -5,
+    "signal_threshold": 70,
+    "strong_alert_threshold": 85,
+    "combo_alone_max_score": 65
+  },
+  "kelly_sizing": {
+    "kelly_fraction": 0.25,
+    "kelly_max_pct": 0.10,
+    "kelly_min_pct": 0.02,
+    "window_floor_trades": 10,
+    "window_small": 20,
+    "window_large": 50,
+    "window_small_threshold": 100
+  },
+  "behavior_status": {
+    "watch_win_rate_threshold": 0.48,
+    "retire_watch_weeks": 4,
+    "recover_to_active_threshold": 0.52,
+    "min_signals_for_evaluation": 30
+  },
+  "combo_discovery": {
+    "enabled": true,
+    "min_signals_in_2yr_backtest": 150,
+    "promotion_to_behavior_months": 3,
+    "run_time_post_market": "15:45",
+    "total_cost_per_trade_rupees": 200
+  }
+}

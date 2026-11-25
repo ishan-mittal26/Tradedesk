@@ -1,0 +1,121 @@
+{
+  "instruments": {
+    "NIFTY": {
+      "display_name": "NIFTY 50",
+      "symbol": "NIFTY",
+      "exchange": "NSE_INDEX",
+      "upstox_symbol": "NSE_INDEX|Nifty 50",
+      "lot_size": 65,
+      "lot_size_effective_from": "2026-01-06",
+      "tick_size": 0.05,
+      "expiry_day": "Thursday",
+      "segment": "INDEX",
+      "options_exchange": "NSE_FO",
+      "strike_interval": 50,
+      "atm_range_strikes": 10,
+      "vix_source": "NSE_INDEX|India VIX",
+      "enabled": true
+    },
+    "BANKNIFTY": {
+      "display_name": "BANK NIFTY",
+      "symbol": "BANKNIFTY",
+      "exchange": "NSE_INDEX",
+      "upstox_symbol": "NSE_INDEX|Nifty Bank",
+      "lot_size": 30,
+      "lot_size_effective_from": "2026-01-06",
+      "tick_size": 0.05,
+      "expiry_day": "Wednesday",
+      "segment": "INDEX",
+      "options_exchange": "NSE_FO",
+      "strike_interval": 100,
+      "atm_range_strikes": 10,
+      "enabled": true
+    },
+    "FINNIFTY": {
+      "display_name": "FIN NIFTY",
+      "symbol": "FINNIFTY",
+      "exchange": "NSE_INDEX",
+      "upstox_symbol": "NSE_INDEX|Nifty Fin Service",
+      "lot_size": 60,
+      "lot_size_effective_from": "2026-01-06",
+      "tick_size": 0.05,
+      "expiry_day": "Tuesday",
+      "segment": "INDEX",
+      "options_exchange": "NSE_FO",
+      "strike_interval": 50,
+      "atm_range_strikes": 10,
+      "enabled": true
+    },
+    "SENSEX": {
+      "display_name": "SENSEX",
+      "symbol": "SENSEX",
+      "exchange": "BSE_INDEX",
+      "upstox_symbol": "BSE_INDEX|SENSEX",
+      "lot_size": 20,
+      "lot_size_effective_from": "2025-01-01",
+      "tick_size": 0.05,
+      "expiry_day": "Friday",
+      "segment": "INDEX",
+      "options_exchange": "BFO",
+      "strike_interval": 100,
+      "atm_range_strikes": 10,
+      "enabled": true
+    }
+  },
+  "timeframes": {
+    "base": "5m",
+    "derived": [
+      "15m",
+      "1h",
+      "4h",
+      "1d",
+      "1w"
+    ],
+    "confluence_set": [
+      "1d",
+      "1h",
+      "15m",
+      "5m"
+    ],
+    "chart_default": "15m"
+  },
+  "historical_lookback": {
+    "5m": {
+      "days": 30,
+      "description": "30 days of 5-min candles"
+    },
+    "15m": {
+      "days": 90,
+      "description": "90 days of 15-min candles"
+    },
+    "1h": {
+      "days": 180,
+      "description": "180 days of 1-hour candles"
+    },
+    "4h": {
+      "days": 365,
+      "description": "1 year of 4-hour candles"
+    },
+    "1d": {
+      "days": 730,
+      "description": "2 years of daily candles"
+    },
+    "1w": {
+      "days": 1095,
+      "description": "3 years of weekly candles"
+    }
+  },
+  "upstox_interval_map": {
+    "5m": "30minute",
+    "15m": "30minute",
+    "1h": "60minute",
+    "4h": "60minute",
+    "1d": "day",
+    "1w": "week"
+  },
+  "active": [
+    "OLA",
+    "TATASTEEL",
+    "RVNL"
+  ]
+}
